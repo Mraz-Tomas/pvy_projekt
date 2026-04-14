@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f0f2f5;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT */
+.left {
+    width: 20%;
+    background: white;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* CENTER */
+.center {
+    width: 60%;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+/* RIGHT */
+.right {
+    width: 20%;
+    background: white;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+/* POSTS */
+.post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* NEW POST */
+.newPost {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* BOTTOM NAV */
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+}
+
+.bottomNav button {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    color: black;
+}
