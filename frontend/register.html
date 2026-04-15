@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="center">
+<div class="center-box">
+  <div class="auth-card">
     <h2>Registrace</h2>
 
-    <input id="username" placeholder="Username">
-    <input id="password" type="password" placeholder="Password">
-    <input id="first_name" placeholder="Jméno">
-    <input id="last_name" placeholder="Příjmení">
+    <input id="u" placeholder="Username">
+    <input id="p" type="password" placeholder="Password">
     <input id="age" type="number" placeholder="Věk">
 
-    <select id="gender">
-        <option>male</option>
-        <option>female</option>
-    </select>
-
     <button onclick="register()">Registrovat</button>
+
+    <p style="margin-top:15px; font-size:14px;">
+      Už máš účet?
+      <a href="login.html" class="link">
+        Přihlášení
+      </a>
+    </p>
+  </div>
 </div>
 
-<script src="register.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>StudentBook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">📘 StudentBook</div>
+  <button class="add-btn" onclick="openModal()">+</button>
+</div>
+
+<div class="layout">
+
+  <!-- PROFIL -->
+  <div class="sidebar">
+    <div class="profile-card">
+      <div class="profile-avatar" id="avatar">U</div>
+      <div class="profile-name" id="username">User</div>
+
+      <button class="logout-btn" onclick="logout()">
+        Odhlásit se
+      </button>
+    </div>
+  </div>
+
+  <!-- FEED -->
+  <div class="feed">
+    <div id="feed"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3>Nový příspěvek</h3>
+    <textarea id="text"></textarea><br><br>
+    <button onclick="createPost()">Přidat</button>
+    <button onclick="closeModal()">Zavřít</button>
+  </div>
+</div>
+<div class="modal" id="editModal">
+  <div class="modal-content">
+    <h3>Upravit příspěvek</h3>
+
+    <textarea id="editText"></textarea><br><br>
+
+    <button onclick="saveEdit()">Uložit</button>
+    <button onclick="closeEdit()">Zrušit</button>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,16 +1,9 @@
-const router = require("express").Router();
-const db = require("../db");
+import express from "express";
+import { getUsers } from "../controllers/userController.js";
+import { auth } from "../middleware/auth.js";
 
-router.get("/", (req, res) => {
-    db.query(`
-        SELECT users.*, COUNT(posts.id) as post_count
-        FROM users
-        LEFT JOIN posts ON users.id = posts.user_id
-        GROUP BY users.id
-        ORDER BY last_name
-    `, (err, result) => {
-        res.send(result);
-    });
-});
+const router = express.Router();
 
-module.exports = router;
+router.get("/", auth, getUsers);
+
+export default router;

@@ -1,82 +1,261 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #3b82f6;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --danger: #ef4444;
+}
+
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #f0f2f5;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.container {
-    display: flex;
-    height: 100vh;
+/* NAVBAR */
+.navbar {
+  background: var(--card);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
 }
 
-/* LEFT */
-.left {
-    width: 20%;
-    background: white;
-    padding: 20px;
-    border-right: 1px solid #ddd;
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--accent);
 }
 
-/* CENTER */
-.center {
-    width: 60%;
-    padding: 20px;
-    overflow-y: scroll;
+/* PLUS BUTTON */
+.add-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(59,130,246,0.5);
 }
 
-/* RIGHT */
-.right {
-    width: 20%;
-    background: white;
-    padding: 20px;
-    border-left: 1px solid #ddd;
+/* LAYOUT */
+.layout {
+  display: flex;
+  max-width: 1100px;
+  margin: 20px auto;
 }
 
-/* POSTS */
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+}
+
+.profile-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.profile-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 10px;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* LOGOUT */
+.logout-btn {
+  margin-top: 10px;
+  background: var(--danger);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* FEED */
+.feed {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* POST */
 .post {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: 0.2s;
 }
 
-/* NEW POST */
-.newPost {
-    background: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+.post:hover {
+  transform: translateY(-3px);
 }
 
-input, textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
+/* HEADER */
+.post-header {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
+/* TEXT */
+.post-text {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* ACTIONS */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BUTTONS */
 button {
-    padding: 10px;
-    background: #1877f2;
-    color: white;
-    border: none;
-    cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
 }
 
-/* BOTTOM NAV */
-.bottomNav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: white;
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid #ccc;
+button:hover {
+  opacity: 0.85;
 }
 
-.bottomNav button {
-    flex: 1;
-    padding: 15px;
-    background: none;
-    color: black;
+/* DELETE */
+.post-actions button:nth-child(3) {
+  background: var(--danger);
+}
+
+/* COMMENTS */
+.comments {
+  margin-top: 10px;
+}
+
+.comment {
+  font-size: 13px;
+  background: #0f172a;
+  padding: 5px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+/* COMMENT INPUT */
+.comment-box {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.comment-box input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  width: 350px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+
+/* LOGIN / REGISTER */
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-card {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: white;
+}
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* auth button upgrade */
+.auth-card button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background: #2563eb;
 }

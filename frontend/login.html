@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="center">
-    <h2>Přihlášení</h2>
+<div class="center-box">
+  <div class="auth-card">
+    <h2>📘 StudentBook</h2>
 
-    <input id="username" placeholder="Username">
-    <input id="password" type="password" placeholder="Password">
+    <input id="u" placeholder="Username">
+    <input id="p" type="password" placeholder="Password">
 
-    <button onclick="login()">Přihlásit</button>
+    <button onclick="login()">Login</button>
 
-    <p onclick="goRegister()">Nemáš účet? Registrace</p>
+    <p style="margin-top:15px; font-size:14px;">
+      Nemáš účet?
+      <a href="register.html" class="link">
+        Registrace
+      </a>
+    </p>
+  </div>
 </div>
 
-<script src="login.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

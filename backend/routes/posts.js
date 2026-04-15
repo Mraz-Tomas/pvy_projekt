@@ -1,25 +1,23 @@
-const router = require("express").Router();
-const db = require("../db");
+import express from "express";
+import {
+  getPosts,
+  createPost,
+  likePost,
+  getComments,
+  addComment,
+    deletePost,
+    updatePost
+} from "../controllers/postController.js";
+import { auth } from "../middleware/auth.js";
 
-router.get("/", (req, res) => {
-    db.query(`
-        SELECT posts.*, users.username 
-        FROM posts
-        JOIN users ON posts.user_id = users.id
-        ORDER BY created_at DESC
-    `, (err, result) => {
-        res.send(result);
-    });
-});
+const router = express.Router();
 
-router.post("/", (req, res) => {
-    const { user_id, title, content } = req.body;
+router.get("/", auth, getPosts);
+router.post("/", auth, createPost);
+router.post("/like", auth, likePost);
+router.get("/comments/:postId", auth, getComments);
+router.post("/comments", auth, addComment);
+router.delete("/:id", auth, deletePost);
+router.put("/:id", auth, updatePost);
 
-    db.query(
-        "INSERT INTO posts (user_id, title, content) VALUES (?, ?, ?)",
-        [user_id, title, content],
-        () => res.send("Post added")
-    );
-});
-
-module.exports = router;
+export default router;
